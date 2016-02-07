@@ -1,0 +1,15 @@
+FROM node:argon
+
+# Mount any shared volumes from host to container @ /share
+VOLUME ["/share"]
+WORKDIR /share
+
+# Install app dependencies
+ADD package.json /share/package.json
+RUN npm install -g npm \
+    npm cache clean -f \
+    npm install -g n \
+    n stable \
+    npm install
+
+EXPOSE 8080
