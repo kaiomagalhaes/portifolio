@@ -13,6 +13,7 @@ import s from './App.scss';
 import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
+import bs from '../../../node_modules/bootstrap/dist/css/bootstrap.css';
 
 class App extends Component {
 
@@ -45,6 +46,7 @@ class App extends Component {
   }
 
   componentWillMount() {
+    this.props.context.insertCss(bs);
     this.removeCss = this.props.context.insertCss(s);
   }
 

@@ -73,6 +73,13 @@ const config = {
         ],
         loader: 'babel-loader',
       }, {
+        test: /\.css$/,
+        loaders: [
+          'isomorphic-style-loader',
+          `css-loader?sourceMap&modules&localIdentName=[local]`,
+          'postcss-loader?parser=postcss-scss',
+        ],
+      }, {
         test: /\.scss$/,
         loaders: [
           'isomorphic-style-loader',
