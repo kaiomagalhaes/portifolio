@@ -12,12 +12,15 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Header.scss';
 import Link from '../Link';
 import Navigation from '../Navigation';
+import Image from 'react-bootstrap/lib/Image';
 
 class Header extends Component {
 
   render() {
+    const circleShape = true;
     return (
       <div className={s.root}>
+        <Image circle={circleShape} src="http://www.gravatar.com/avatar/046435822bf4ad50b74b9cae8d7e8c3a?s=180&r=g&d=retro"/>
         <div className={s.container}>
           <Navigation className={s.nav} />
           <Link className={s.brand} to="/">
